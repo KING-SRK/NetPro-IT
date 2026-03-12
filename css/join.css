@@ -1,0 +1,191 @@
+.join {
+  padding: 100px 20px;
+  background-color: #0a0d1f;
+  text-align: center;
+}
+
+.join-container h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.blue-h2 {
+  display: inline-block;
+  width: fit-content;
+  background: linear-gradient(to right, transparent, #00c2f7);
+  border-right: 5px solid #fff;
+}
+
+/* ফর্ম কন্টেইনার */
+.join-content {
+  margin-top: 50px;
+}
+.input-group-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 100px; /* পিল শেপ */
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 30px rgba(0, 247, 255, 0.05);
+}
+
+/* ইনপুট গ্রুপ (আইকন + ইনপুট) */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 20px;
+  border-radius: 100px;
+  flex: 1;
+  cursor: text;
+}
+
+.input-group i {
+  color: #8892b0;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.input-group input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.input-group input::placeholder {
+  color: #8892b0;
+}
+
+/* জয়েন বাটন */
+.join-btn {
+  background: #01f0ff;
+  color: #000;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(1, 240, 255, 0.3);
+}
+
+.join-btn:hover {
+  background: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+/* ১. যখন ইনপুট বক্সে ক্লিক করা হবে, তখন তার প্যারেন্ট (input-group) এর বর্ডার পাল্টে যাবে */
+.input-group:focus-within {
+  border: 1px solid #01f0ff; /* সায়ান বর্ডার */
+  box-shadow: 0 0 15px rgba(1, 240, 255, 0.3); /* হালকা গ্লো */
+  background: rgba(1, 240, 255, 0.05); /* ভেতরটা সামান্য উজ্জ্বল হবে */
+  transition: all 0.3s ease;
+}
+
+/* ২. ইনপুট বক্সে ক্লিক করলে আইকনের রঙও পাল্টে যাবে */
+.input-group:focus-within i {
+  color: #01f0ff;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* ৩. ব্রাউজারের ডিফল্ট নীল আউটলাইন বন্ধ করার জন্য */
+.input-group input:focus {
+  outline: none;
+}
+
+/* ৪. পুরো ফর্ম কন্টেইনারেও একটা হালকা ইফেক্ট দেওয়া যায় */
+.input-group-container:focus-within {
+  border-color: rgba(1, 240, 255, 0.5);
+  box-shadow: 0 0 40px rgba(1, 240, 255, 0.1);
+}
+
+/* ================================= */
+/* ========= TABLET VIEW =========== */
+/* ================================= */
+
+@media (max-width: 1024px) {
+  .join-container h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .input-group-container {
+    max-width: 700px;
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .join-btn {
+    padding: 14px 28px;
+  }
+}
+
+/* ================================= */
+/* ========= MOBILE VIEW =========== */
+/* ================================= */
+
+@media (max-width: 768px) {
+  .join {
+    padding: 20px;
+  }
+
+  .join-container h2 {
+    font-size: 1.7rem;
+  }
+
+  /* pill → vertical stack */
+  .input-group-container {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .input-group {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .join-btn {
+    width: 100%;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* ================================= */
+/* ======== SMALL MOBILE =========== */
+/* ================================= */
+
+@media (max-width: 480px) {
+  .join-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .blue-h2 {
+    border-right: 3px solid #fff;
+  }
+
+  .input-group {
+    padding: 10px 15px;
+  }
+
+  .input-group input {
+    font-size: 0.95rem;
+  }
+}

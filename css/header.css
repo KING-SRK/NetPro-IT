@@ -1,0 +1,207 @@
+/* --- Global Reset for Header --- */
+.gt-main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 1000;
+  background: rgba(5, 5, 5, 0.75); /* Deep dark with glass effect */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.gt-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+}
+
+/* --- Logo Section --- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #01f0ff; /* Blue accent instead of yellow for harmony */
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(1, 240, 255, 0.3);
+  transition: 0.4s;
+}
+
+.logo:hover {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 0 25px rgba(1, 240, 255, 0.5);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-text h2 {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.logo-text p {
+  font-size: 0.7rem;
+  color: #01f0ff;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* --- Navigation Links --- */
+.gt-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+/* নিচের সুন্দর আন্ডারলাইন অ্যানিমেশন */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #01f0ff;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE NAV LINK */
+
+.nav-link.active {
+  color: #00f2ff;
+  position: relative;
+}
+
+/* glow underline effect */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #00f2ff;
+  box-shadow: 0 0 10px #00f2ff;
+}
+
+/* --- Premium Button --- */
+.nav-btn {
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(1, 240, 255, 0.4);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-btn i {
+  font-size: 1.2rem;
+  color: #01f0ff;
+}
+
+.nav-btn:hover {
+  background: #01f0ff;
+  color: #000;
+  border-color: #01f0ff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(1, 240, 255, 0.3);
+}
+
+.nav-btn:hover i {
+  color: #000;
+}
+
+/* --- Fake Header (to prevent content jump) --- */
+.fake-header {
+  height: 85px;
+  width: 100%;
+  background-color: #0a1217;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* ===== Mobile View ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .gt-main-header {
+    background: rgba(5, 5, 5, 0.95);
+  }
+
+  .gt-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(15px);
+
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+  }
+
+  .gt-nav ul {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .gt-nav.active {
+    max-height: 300px;
+  }
+
+  .header-right {
+    display: none; /* mobile e button hide */
+  }
+}

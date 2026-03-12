@@ -1,0 +1,296 @@
+.bento-section {
+  padding: 100px 8%;
+  background: #0a0d1f; /* একদম ডার্ক */
+}
+
+.bento-container {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* কমন কার্ড স্টাইল - তোমার হোম পেজের মতো */
+.bento-card {
+  background-color: #0d112d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 162, 255, 0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-card:hover {
+  border-color: rgba(0, 162, 255, 0.4);
+  background: rgba(0, 162, 255, 0.02);
+}
+
+/* Large Card Typography */
+.large-card h2 {
+  font-size: 3rem;
+  color: #fff;
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+.large-card p {
+  color: #888;
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+/* Floating Elements in Visual */
+.card-visual {
+  position: relative;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.main-visual {
+  width: 70%;
+  filter: drop-shadow(0 0 30px rgba(0, 162, 255, 0.2));
+}
+
+.floating-mini-card {
+  position: absolute;
+  background-color: #0d112d;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.c1 {
+  left: 5%;
+  bottom: 30%;
+  color: #00ff88;
+  border-bottom: 3px solid #00ff88;
+}
+.c2 {
+  right: 5%;
+  top: 0%;
+  color: #00a2ff;
+  border-bottom: 3px solid #00a2ff;
+}
+
+.bento-btn {
+  margin-top: 30px;
+  background: #00a2ff;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bento-btn:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+/* Right Side Stats & Desc */
+.bento-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats-card {
+  background-color: #0d112d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-avatars {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.user-avatars img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  margin-right: -15px;
+}
+
+.plus-icon {
+  width: 50px;
+  height: 50px;
+  background: #00a2ff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #000;
+  font-weight: bold;
+}
+
+.stats-text h3 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.stats-text p {
+  color: #00a2ff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.desc-card p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+}
+
+.about-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 1200px) {
+  .bento-container {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 18px;
+  }
+
+  .large-card h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bento-section {
+    padding: 80px 6%;
+  }
+
+  .bento-card {
+    padding: 35px;
+  }
+
+  .large-card h2 {
+    font-size: 2.2rem;
+  }
+
+  .stats-text h3 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-container {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-right-col {
+    flex-direction: row;
+  }
+
+  .bento-right-col .bento-card {
+    flex: 1;
+  }
+
+  .large-card {
+    text-align: center;
+  }
+
+  .large-card p {
+    margin: auto;
+  }
+
+  .card-visual {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-section {
+    padding: 70px 20px;
+  }
+
+  .bento-right-col {
+    flex-direction: column;
+  }
+
+  .bento-card {
+    padding: 28px;
+    border-radius: 22px;
+  }
+
+  .large-card h2 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  .stats-text h3 {
+    font-size: 2rem;
+  }
+
+  .user-avatars img,
+  .plus-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .desc-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .large-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .bento-card {
+    padding: 22px;
+  }
+
+  .bento-btn,
+  .about-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

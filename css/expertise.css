@@ -1,0 +1,210 @@
+/* --- Expertise Section Layout --- */
+.expertise {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #0a0d1f;
+  padding: 100px 8%;
+  overflow: hidden;
+  text-align: center; /* হেডিং এবং নিচের বাটন সেন্টার করার জন্য */
+}
+
+/* Background Glow Effect */
+.expertise::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 255, 0.15) 0%,
+    rgba(0, 255, 255, 0) 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.expertise h2 {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 60px;
+}
+
+.expertise h2 span {
+  color: #00c2f7;
+}
+
+/* --- Grid Container --- */
+.expertise-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto; /* কার্ডের নিচে গ্যাপ রাখা হলো যাতে বাটনটা দূরে থাকে */
+  position: relative;
+  z-index: 2;
+}
+
+/* --- The Animated Card --- */
+.expertise-card {
+  position: relative;
+  padding: 50px 40px;
+  border-radius: 20px;
+  background: #0d102a;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* কার্ডের ভেতর কন্টেন্ট বাম দিকে থাকবে */
+  text-align: left;
+  border: 2px solid transparent;
+}
+
+/* Rotating Border Effect (Conic) */
+.expertise-card::after {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 40%,
+    #01f0ff 50%,
+    #fff 55%,
+    #01f0ff 60%,
+    transparent 70%,
+    transparent 100%
+  );
+  animation: rotateBorder 4s linear infinite;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Inner Background Cover */
+.expertise-card::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #0d112d;
+  border-radius: 17px;
+  z-index: 1;
+  transition:
+    opacity 0.3s ease,
+    inset 0.3s ease;
+}
+
+/* Hover Logic */
+.expertise-card:hover {
+  transform: translateY(-10px);
+  border-color: #01f0ff;
+  box-shadow: 0 0 25px rgba(1, 240, 255, 0.4);
+}
+
+.expertise-card:hover::after {
+  opacity: 0;
+  animation-play-state: paused;
+}
+
+.expertise-card:hover::before {
+  inset: 0;
+}
+
+/* --- Content Styling --- */
+.expertise-icon,
+.expertise-card h3,
+.expertise-card p {
+  position: relative;
+  z-index: 5;
+}
+
+.expertise-icon {
+  width: 60px;
+  height: 60px;
+  background: #01f0ff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+.expertise-card:hover .expertise-icon {
+  transform: scale(1.1) rotate(-8deg);
+  background: #fff;
+}
+
+.expertise-card h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.expertise-card p {
+  color: #8892b0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- THE MAIN BUTTON (Centered) --- */
+/* কার্ডের বাইরের বাটনকে টার্গেট করা হলো */
+.expertise > .expertise-btn {
+  position: relative;
+  z-index: 10;
+  margin: 20px auto 0 auto; /* auto ব্যবহার করে মাঝখানে আনা হলো */
+  background: linear-gradient(135deg, rgba(1, 240, 255, 0.1), transparent);
+  color: #fff;
+  border: 2px solid #01f0ff;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex; /* সেন্টার করার জন্য জরুরি */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(1, 240, 255, 0.2);
+}
+
+.expertise > .expertise-btn:hover {
+  background: #01f0ff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(1, 240, 255, 0.5);
+}
+
+/* --- Animation Keyframes --- */
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+  .expertise-card-container {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise > .expertise-btn {
+    width: 90%; /* মোবাইলে একটু চওড়া */
+    padding: 12px 25px;
+  }
+}

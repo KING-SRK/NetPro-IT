@@ -1,0 +1,226 @@
+.gt-contact-ux {
+  padding: 100px 8%;
+  /* একদম কালো থেকে সরিয়ে একটু নেভি ব্লু গ্রেডিয়েন্ট */
+  background: radial-gradient(circle at top right, #111827, #050505);
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ব্যাকগ্রাউন্ডে একটা হালকা নীল রঙের আভা (Atmosphere) */
+.gt-contact-ux::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 162, 255, 0.05);
+  filter: blur(100px);
+  top: 10%;
+  left: 5%;
+  pointer-events: none;
+}
+
+.gt-ux-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.gt-ux-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.gt-ux-badge {
+  color: #00f2ff; /* একটু ব্রাইট সাইয়ান */
+  background: rgba(0, 242, 255, 0.1);
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+}
+
+.gt-ux-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  margin-top: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.gt-ux-header p {
+  color: #94a3b8; /* একটু হালকা গ্রে-ব্লু কালার */
+  margin-top: 18px;
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Improved Card UX --- */
+.gt-ux-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.gt-ux-card {
+  text-decoration: none;
+  /* কার্ডের ব্যাকগ্রাউন্ড একটু হালকা করা হলো */
+  background: rgba(255, 255, 255, 0.03);
+  padding: 30px 40px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gt-ux-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(0, 242, 255, 0.5);
+  transform: translateY(-5px) scale(1.01);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.gt-ux-card {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  /* বাঁদিকের প্যাডিং একটু কমিয়ে আইকনকে সাইডে আনা হলো */
+  padding: 25px 30px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  /* আইকন আর টেক্সটের মাঝে গ্যাপটা একটু বাড়ানো হলো */
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 100%;
+}
+
+.gt-ux-icon {
+  /* আইকন বক্সের সাইজ একটু কমিয়ে আরও স্লিক করা হলো */
+  min-width: 65px;
+  height: 65px;
+  font-size: 1.8rem;
+  color: #00f2ff;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 242, 255, 0.1),
+    rgba(0, 162, 255, 0.05)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  /* আইকন যেন একদম বাম দিকে চেপে থাকে */
+  flex-shrink: 0;
+}
+
+.gt-ux-info {
+  /* টেক্সট যেন আইকনের পাশের পুরো জায়গাটা পায় */
+  flex-grow: 1;
+}
+
+.gt-ux-info h3 {
+  font-size: 1.25rem;
+  color: #f8fafc;
+  margin-bottom: 2px;
+}
+
+.gt-ux-info p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.gt-ux-val {
+  color: #00f2ff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* অ্যারো আইকনটাকে একটু ডান দিকে পুশ করা */
+.gt-arrow {
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.gt-ux-card:hover .gt-arrow {
+  color: #00f2ff;
+  transform: translateX(10px);
+}
+
+/* ===============================
+   TABLET RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  .gt-contact-ux {
+    padding: 80px 6%;
+  }
+
+  .gt-ux-header h1 {
+    font-size: 2.6rem;
+  }
+
+  .gt-ux-card {
+    padding: 22px 25px;
+    gap: 18px;
+  }
+
+  .gt-ux-icon {
+    min-width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+  .gt-contact-ux {
+    padding: 20px;
+  }
+
+  .gt-ux-header h1 {
+    font-size: 2rem;
+  }
+
+  .gt-ux-header p {
+    font-size: 0.95rem;
+  }
+
+  .gt-ux-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 22px;
+  }
+
+  .gt-arrow {
+    display: none;
+  }
+
+  .gt-ux-icon {
+    min-width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .gt-ux-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .gt-ux-val {
+    font-size: 0.9rem;
+  }
+}

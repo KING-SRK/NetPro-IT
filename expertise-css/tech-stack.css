@@ -1,0 +1,157 @@
+/* --- Tech Stack Section --- */
+.tech-stack {
+  padding: 100px 8%;
+  background: #0a0d1f;
+}
+
+.tech-stack-title {
+  color: #fff;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.stack-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* হোভার করলে নীল বর্ডার আর গ্লো আসবে */
+.stack-card:hover {
+  border-color: rgba(0, 162, 255, 0.5);
+  background: rgba(0, 162, 255, 0.05);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stack-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 162, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.stack-icon i {
+  font-size: 2rem;
+  color: #00a2ff;
+}
+
+.stack-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.stack-card p {
+  color: #8892b0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .tech-stack {
+    padding: 80px 6%;
+  }
+
+  .tech-stack-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  .stack-grid {
+    gap: 25px;
+  }
+
+  .stack-card {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-stack {
+    padding: 20px;
+  }
+
+  .tech-stack-title {
+    font-size: 2.2rem;
+  }
+
+  .stack-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .stack-card {
+    padding: 30px;
+  }
+
+  .stack-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .stack-icon {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-stack-title {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  .stack-card {
+    padding: 25px;
+    border-radius: 16px;
+  }
+
+  .stack-card ul li {
+    font-size: 0.95rem;
+  }
+
+  .stack-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stack-icon i {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .tech-stack {
+    padding: 15px;
+  }
+
+  .tech-stack-title {
+    font-size: 1.7rem;
+  }
+
+  .stack-card {
+    padding: 22px;
+  }
+}

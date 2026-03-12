@@ -1,0 +1,148 @@
+.mission {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("/images/blue-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-content {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  transform: translateY(-50%);
+  padding: 0 50px;
+}
+
+.mission-content h2 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.mission-content h2 span {
+  color: #00c2f7;
+}
+
+.mission-content p {
+  color: #eeeeee;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.mission-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #01f0ff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mission-btn:hover {
+  background-color: #01f0ff;
+  color: #000;
+}
+
+/* ================================= */
+/* ========= TABLET VIEW =========== */
+/* ================================= */
+
+@media (max-width: 1024px) {
+  .mission-content {
+    width: 65%;
+    padding: 0 40px;
+  }
+
+  .mission-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 35px;
+  }
+
+  .mission-content p {
+    font-size: 1.3rem;
+  }
+}
+
+/* ================================= */
+/* ========= MOBILE VIEW =========== */
+/* ================================= */
+
+@media (max-width: 768px) {
+  .mission {
+    min-height: auto;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .mission::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 25, 0.65); /* overlay darkness */
+    z-index: 1;
+  }
+
+  /* absolute remove */
+  .mission-content {
+    position: relative;
+    top: auto;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .mission-content h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 25px;
+  }
+
+  .mission-content h2 span {
+    display: block;
+  }
+
+  .mission-content p {
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+  }
+
+  .mission-btn {
+    margin-top: 25px;
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+/* ================================= */
+/* ======== SMALL MOBILE =========== */
+/* ================================= */
+
+@media (max-width: 480px) {
+  .mission-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .mission-content p {
+    font-size: 0.9rem;
+  }
+
+  .mission-btn {
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

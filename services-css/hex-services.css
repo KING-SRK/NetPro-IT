@@ -1,0 +1,243 @@
+.gt-services-wrap {
+  padding: 100px 8%;
+  background-color: #0a0d1f;
+}
+
+.gt-services-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 80px;
+}
+
+.gt-premium-badge {
+  color: #00a2ff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.gt-main-title {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-top: 15px;
+  font-weight: 800;
+}
+
+.gt-blue-glow {
+  color: #00a2ff;
+  text-shadow: 0 0 20px rgba(0, 162, 255, 0.3);
+}
+
+.gt-intro-right {
+  text-align: right;
+}
+
+.gt-sub-text {
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.gt-box-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+
+/* The Hex-Lock Grid */
+.gt-hex-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.gt-service-box {
+  background: #0d112d;
+  padding: 60px 45px;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* ছবিতে যেমন হেক্সাগোনাল শেপ আছে */
+  clip-path: polygon(12% 0%, 100% 0%, 100% 88%, 88% 100%, 0% 100%, 0% 12%);
+}
+
+.gt-service-box:hover {
+  background: #111;
+  border-color: rgba(0, 162, 255, 0.5);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.gt-icon-frame {
+  width: 65px;
+  height: 65px;
+  background: rgba(0, 162, 255, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.gt-icon-frame i {
+  font-size: 2.2rem;
+  color: #00a2ff;
+}
+
+.gt-box-title {
+  color: #fff;
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.gt-box-desc {
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.gt-link-btn {
+  color: #00a2ff;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s ease;
+}
+
+.gt-link-btn:hover {
+  gap: 18px;
+  color: #fff;
+}
+
+/* =====================================
+   GT SERVICES RESPONSIVE
+===================================== */
+
+/* ===== Large Laptop ===== */
+@media (max-width: 1200px) {
+  .gt-services-intro {
+    gap: 40px;
+  }
+
+  .gt-hex-grid-layout {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .gt-service-box {
+    padding: 50px 35px;
+  }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+  .gt-services-wrap {
+    padding: 90px 6%;
+  }
+
+  .gt-services-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 60px;
+  }
+
+  .gt-intro-right {
+    max-width: 600px;
+  }
+
+  .gt-main-title {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+  }
+
+  .gt-hex-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+/* ===== Tablet Portrait ===== */
+@media (max-width: 768px) {
+  .gt-services-wrap {
+    padding: 80px 20px;
+  }
+
+  .gt-services-intro {
+    text-align: center;
+    align-items: center;
+  }
+
+  .gt-intro-right {
+    text-align: center;
+  }
+
+  .gt-hex-grid-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .gt-service-box {
+    padding: 45px 28px;
+  }
+
+  .gt-box-title {
+    font-size: 1.4rem;
+  }
+
+  .gt-box-list {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .gt-services-wrap {
+    padding: 20px;
+  }
+
+  .gt-main-title {
+    font-size: 2rem;
+  }
+
+  .gt-hex-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gt-service-box {
+    padding: 40px 24px;
+    clip-path: none; /* mobile এ hex shape remove করলে clean দেখায় */
+    border-radius: 18px;
+  }
+
+  .gt-icon-frame {
+    width: 55px;
+    height: 55px;
+  }
+
+  .gt-icon-frame i {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== Small Phones ===== */
+@media (max-width: 360px) {
+  .gt-box-title {
+    font-size: 1.25rem;
+  }
+
+  .gt-box-list {
+    font-size: 0.9rem;
+  }
+}

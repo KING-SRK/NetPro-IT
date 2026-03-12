@@ -1,0 +1,261 @@
+.services-hero {
+  padding: 120px 8%;
+  background-color: #0a0d1f;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Left Content Styles */
+.services-left .breadcrumb {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.services-left .current-page {
+  color: #fff;
+  font-weight: 600;
+}
+
+.services-left h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.services-left p {
+  font-size: 1.15rem;
+  color: #888;
+  line-height: 1.8;
+  max-width: 550px;
+  margin-bottom: 40px;
+}
+
+.hero-btn1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #01f0ff;
+  background: #01f0ff;
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-btn1:hover {
+  background: transparent;
+  color: #01f0ff;
+}
+
+/* Hex Grid Styles - The Core Design */
+.services-right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hex-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 280px); /* ছবিতে যেমন কার্ডের সাইজ আছে */
+  grid-template-rows: repeat(2, 280px);
+  gap: 50px;
+  position: relative;
+}
+
+/* কার্ডের কমন শেপ (Hexagonal Clip-Path) */
+.hex-card {
+  border-radius: 20px; /* ছবিতে রাউন্ডেড শেপ আছে */
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  filter: grayscale(20%) contrast(105%);
+  transition: transform 0.4s ease;
+
+  /* Pictures from the image have a rounded octagonal shape, let's achieve it */
+  clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 25%,
+    100% 75%,
+    75% 100%,
+    25% 100%,
+    0% 75%,
+    0% 25%
+  );
+}
+
+.hex-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hex-card:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+  box-shadow: 0 0 30px rgba(0, 162, 255, 0.3); /* তোমার সিগনেচার গ্লো */
+}
+
+/* কার্ডের স্পেসিফিক পজিশন */
+.top-left {
+  margin-right: -15px;
+  margin-bottom: -15px;
+}
+.top-right {
+  margin-left: -15px;
+  margin-bottom: -15px;
+}
+.bottom-left {
+  margin-right: -15px;
+  margin-top: -15px;
+}
+.bottom-right {
+  margin-left: -15px;
+  margin-top: -15px;
+}
+
+/* মাঝখানের মিনি কার্ড */
+.hex-mini {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border: 3px solid rgba(0, 162, 255, 0.5); /* নীল গ্লো বর্ডার */
+}
+
+/* =====================================
+   SERVICES HERO RESPONSIVE
+===================================== */
+
+/* ===== Large Laptop ===== */
+@media (max-width: 1200px) {
+  .services-container {
+    gap: 70px;
+  }
+
+  .hex-grid-container {
+    grid-template-columns: repeat(2, 240px);
+    grid-template-rows: repeat(2, 240px);
+    gap: 40px;
+  }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+  .services-hero {
+    padding: 100px 6%;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 70px;
+  }
+
+  .services-left p {
+    margin: 0 auto 40px;
+  }
+
+  .services-right {
+    justify-content: center;
+  }
+
+  .hex-grid-container {
+    grid-template-columns: repeat(2, 220px);
+    grid-template-rows: repeat(2, 220px);
+    gap: 35px;
+  }
+}
+
+/* ===== Tablet Portrait ===== */
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 50px 20px;
+  }
+
+  .services-left h1 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+  }
+
+  .services-left p {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hex-grid-container {
+    grid-template-columns: repeat(2, 180px);
+    grid-template-rows: repeat(2, 180px);
+    gap: 25px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .services-container {
+    gap: 50px;
+  }
+
+  .services-left h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .services-left p {
+    font-size: 0.95rem;
+  }
+
+  .breadcrumb {
+    justify-content: center;
+  }
+
+  /* hex grid smaller */
+  .hex-grid-container {
+    grid-template-columns: repeat(2, 140px);
+    grid-template-rows: repeat(2, 140px);
+    gap: 20px;
+  }
+
+  /* overlap adjust */
+  .top-left,
+  .top-right,
+  .bottom-left,
+  .bottom-right {
+    margin: 0;
+  }
+}
+
+/* ===== Small Phones ===== */
+@media (max-width: 360px) {
+  .hex-grid-container {
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: repeat(2, 120px);
+    gap: 15px;
+  }
+
+  .services-left h1 {
+    font-size: 1.7rem;
+  }
+}

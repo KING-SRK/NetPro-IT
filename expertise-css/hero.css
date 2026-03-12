@@ -1,0 +1,302 @@
+/* --- Expertise Hero Section Styles --- */
+.expertise-hero {
+  width: 100%;
+  min-height: 100vh; /* Better for Full Screen Feel */
+  background: #0a0d1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== HERO BACKGROUND OVERLAY ===== */
+.expertise-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 162, 255, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(circle at 80% 70%, rgba(1, 240, 255, 0.1), transparent 45%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ================= CONTAINER ================= */
+.exp-hero-container {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ================= TEXT SIDE ================= */
+.exp-text {
+  flex: 1.2;
+}
+
+.exp-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0, 162, 255, 0.1);
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  color: #00a2ff;
+  border-radius: 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.exp-text h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Dynamically scales */
+  line-height: 1.1;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.blue-h1 {
+  color: #00a2ff;
+  text-shadow: 0 0 30px rgba(0, 162, 255, 0.4);
+}
+
+.exp-text p {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  line-height: 1.7;
+  max-width: 550px;
+  margin-bottom: 35px;
+}
+
+/* BUTTON */
+.hero-btn1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #01f0ff;
+  background: #01f0ff;
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-btn1:hover {
+  background: transparent;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(1, 240, 255, 0.3);
+}
+
+/* ================= IMAGE SIDE ================= */
+.exp-image-box {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.image-glow {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 162, 255, 0.2) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.8s ease;
+}
+
+.exp-image-box:hover img {
+  transform: scale(1.08);
+}
+
+/* ================= FLOATING CARD ================= */
+.floating-card {
+  position: absolute;
+  bottom: 40px;
+  left: -30px; /* Overlap effect */
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(15px);
+  padding: 18px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 162, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 10;
+  animation: floatAnim 4s ease-in-out infinite;
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 162, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box i {
+  font-size: 1.5rem;
+  color: #00a2ff;
+}
+
+.card-text span {
+  display: block;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.card-text p {
+  color: #00a2ff;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* ANIMATION */
+@keyframes floatAnim {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* --- TABLETS (Laptop/Large Tablet) --- */
+@media (max-width: 1100px) {
+  .exp-hero-container {
+    gap: 40px;
+  }
+  .exp-text h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* --- MOBILE & SMALL TABLETS --- */
+@media (max-width: 900px) {
+  .expertise-hero {
+    padding: 80px 5%;
+  }
+
+  .exp-hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 80px;
+  }
+
+  .exp-text {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .exp-text p {
+    max-width: 100%;
+  }
+
+  .exp-image-box {
+    order: 2;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .image-wrapper {
+    max-width: 350px; /* Slightly smaller for mobile */
+  }
+
+  .floating-card {
+    left: 50%;
+    transform: translateX(-50%); /* Centered for mobile */
+    animation: floatAnimMobile 4s ease-in-out infinite;
+    bottom: -20px; /* Moved down to avoid covering image */
+    width: max-content;
+  }
+
+  @keyframes floatAnimMobile {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-15px);
+    }
+  }
+}
+
+/* --- SMALL MOBILE --- */
+@media (max-width: 480px) {
+  .exp-text h1 {
+    font-size: 2rem;
+  }
+
+  .exp-text p {
+    font-size: 0.9rem;
+  }
+
+  .hero-btn1 {
+    font-size: 0.9rem;
+  }
+
+  .exp-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .image-wrapper {
+    max-width: 280px;
+  }
+
+  .floating-card {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .card-text span {
+    font-size: 0.95rem;
+  }
+}
