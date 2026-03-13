@@ -167,6 +167,10 @@
   z-index: 1100;
 }
 
+.mobile-contact {
+  display: none;
+}
+
 /* ===== Mobile View ===== */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -203,5 +207,9 @@
 
   .header-right {
     display: none; /* mobile e button hide */
+  }
+
+  .mobile-contact {
+    display: block;
   }
 }
